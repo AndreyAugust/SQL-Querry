@@ -1,0 +1,8 @@
+SELECT Name, Years, City
+FROM Sellers AS s, City AS c
+WHERE c.CityID=s.CityID AND s.Vanus In (SELECT MAX(Years) FROM Sellers as s, City as c WHERE s.CityID = c.CityID);
+
+
+SELECT Name
+FROM Buyers AS b, [Buyers shops] AS bs, Shops AS s
+WHERE b.BuyersID = bs.BuyersID AND bs.ShopsID=s.ShopsID;
